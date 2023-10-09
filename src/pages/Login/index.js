@@ -7,7 +7,7 @@ import {
 import {
   Input,
   InputLabel,
-  InputAdornment 
+  InputAdornment
 } from '@material-ui/core';
 import { useHistory } from 'react-router-dom';
 import { UsuarioContext } from 'common/context/Usuario';
@@ -36,19 +36,20 @@ function Login() {
           Saldo
         </InputLabel>
         <Input
-        type="number"
-        value={saldo}
-        onChange={(evento) => setSaldo(evento.target.value)}
-        startAdornment={
-          <InputAdornment position="start">
-            R$
-          </InputAdornment>
-        }
-      />
+          type="number"
+          value={saldo}
+          onChange={(evento) => setSaldo(evento.target.value)}
+          startAdornment={
+            <InputAdornment position="start">
+              R$
+            </InputAdornment>
+          }
+        />
       </InputContainer>
       <Button
         variant="contained"
         color="primary"
+        disabled={nome.lenght < 4}
         onClick={() => history.push("/feira")}
       >
         Avançar
